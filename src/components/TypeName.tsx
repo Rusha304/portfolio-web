@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useReducedMotion } from "framer-motion";
 import { Sparkle } from "./icons";
+import { usePointer } from "./interactive/PointerProvider";
 
 const LINES = ["Rusha", "Mistry"];
 const CHAR_MS = 120;
@@ -19,9 +20,19 @@ function Caret() {
 
 export default function TypeName({ startDelay = 650 }: { startDelay?: number }) {
   const reduce = useReducedMotion();
+  const { nx, ny, enabled } = usePointer();
   const [typed, setTyped] = useState<string[]>(["", ""]);
   const [active, setActive] = useState(0);
   const [done, setDone] = useState(false);
+  const [depth, setDepth] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    if (!enabled || reduce) {
+      setDepth({ x: 0, y: 0 });
+      return;
+    }
+    setDepth({ x: nx * 14, y: ny * 10 });
+  }, [nx, ny, enabled, reduce]);
 
   useEffect(() => {
     if (reduce) {
@@ -69,8 +80,15 @@ export default function TypeName({ startDelay = 650 }: { startDelay?: number }) 
   const caretOn = (i: number) =>
     (i === active && !done) || (done && i === LINES.length - 1);
 
+  const depthStyle = {
+    textShadow: `${depth.x}px ${depth.y}px 0 rgba(155, 138, 230, 0.25), ${depth.x * 1.5}px ${depth.y * 1.5}px 0 rgba(239, 107, 174, 0.15)`,
+  };
+
   return (
-    <h1 className="relative font-display font-semibold leading-[0.95] tracking-tight text-ink">
+    <h1
+      className="relative font-display font-semibold leading-[0.95] tracking-tight text-ink transition-[text-shadow] duration-200"
+      style={depthStyle}
+    >
       <span className={lineClass}>
         {typed[0] || "\u200b"}
         {caretOn(0) && <Caret />}
@@ -80,7 +98,7 @@ export default function TypeName({ startDelay = 650 }: { startDelay?: number }) 
           className="marker"
           style={{
             backgroundImage:
-              "linear-gradient(transparent 58%, var(--lavender-soft) 0)",
+              "linear-gradient(transparent 58%, rgba(155, 138, 230, 0.42) 0)",
           }}
         >
           {typed[1] || "\u200b"}

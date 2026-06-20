@@ -10,11 +10,18 @@ import Skills from "@/components/Skills";
 import Contact from "@/components/Contact";
 import Coffee from "@/components/Coffee";
 import Footer from "@/components/Footer";
+import { PointerProvider } from "@/components/interactive/PointerProvider";
+import InkTrail from "@/components/interactive/InkTrail";
+import GridParticles from "@/components/interactive/GridParticles";
+import ScrollColorShift from "@/components/interactive/ScrollColorShift";
 
 export default function Home() {
   return (
-    <>
+    <PointerProvider>
       <Background />
+      <ScrollColorShift />
+      <GridParticles />
+      <InkTrail />
       <CustomCursor />
       <ScrollProgress />
       <Nav />
@@ -28,6 +35,6 @@ export default function Home() {
         <Coffee />
       </main>
       <Footer />
-    </>
+    </PointerProvider>
   );
 }

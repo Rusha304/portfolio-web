@@ -4,6 +4,7 @@
   /* Warm paper canvas */
   --background: #fbf6ec;
   --background-warm: #f5ecdd;
+  --scroll-tint: transparent;
 
   /* Ink */
   --ink: #2a2620;

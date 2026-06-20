@@ -58,10 +58,9 @@ export default function Hero() {
           className="mt-9 max-w-2xl text-lg leading-relaxed text-ink-soft sm:text-xl"
         >
           Software engineer based in{" "}
-          <span className="font-medium text-ink">Long Beach</span> with 1+ year
-          of production experience building{" "}
+          <span className="font-medium text-ink">Long Beach</span>, building{" "}
           <span className="font-medium text-ink">Python backends</span>, REST
-          APIs, and AI-powered applications — with a focus on LLM systems, RAG,
+          APIs, and AI-powered applications with a focus on LLM systems, RAG,
           and reliable, well-tested software.
         </motion.p>
 

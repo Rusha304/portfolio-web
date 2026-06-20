@@ -2,10 +2,12 @@ import { coffeePlaces, skillPalette, accentClasses } from "@/content/site";
 import Section from "./Section";
 import Reveal from "./Reveal";
 import { Coffee as CoffeeIcon } from "./icons";
+import CoffeeSteam from "./interactive/CoffeeSteam";
 
 export default function Coffee() {
   return (
     <Section id="coffee">
+      <CoffeeSteam />
       <Reveal>
         <p className="flex items-center gap-2 font-mono text-sm text-pink">
           <CoffeeIcon className="h-4 w-4" />
@@ -59,7 +61,7 @@ export default function Coffee() {
       ) : (
         <Reveal delay={0.1}>
           <p className="mt-6 inline-flex items-center gap-2 rounded-full bg-butter-soft px-4 py-2 text-sm font-medium text-butter">
-            <CoffeeIcon className="h-4 w-4" /> Recommendations brewing — adding
+            <CoffeeIcon className="h-4 w-4" /> Recommendations brewing, adding
             my picks soon.
           </p>
         </Reveal>

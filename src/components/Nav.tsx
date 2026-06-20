@@ -33,9 +33,6 @@ export default function Nav() {
           <span className="flex h-9 w-9 items-center justify-center rounded-full bg-ink font-display text-sm font-semibold text-background transition-transform group-hover:-rotate-6 group-hover:bg-lavender-bold">
             {profile.initials}
           </span>
-          <span className="font-display text-base font-semibold tracking-tight">
-            {profile.shortName}
-          </span>
         </a>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -54,7 +51,7 @@ export default function Nav() {
           <Magnetic className="hidden sm:inline-block">
             <a
               href="#contact"
-              className="block rounded-full bg-pink-bold px-4 py-2 text-sm font-medium text-white"
+              className="block rounded-full border border-line-strong bg-ink/[0.06] px-4 py-2 text-sm font-medium text-ink transition-colors hover:border-lavender hover:bg-lavender-soft/60 hover:text-lavender"
             >
               Say hello
             </a>
@@ -100,7 +97,7 @@ export default function Nav() {
             <a
               href="#contact"
               onClick={() => setOpen(false)}
-              className="mt-1 block rounded-2xl bg-pink-bold px-4 py-3 text-center text-sm font-medium text-white"
+              className="mt-1 block rounded-2xl border border-line-strong bg-ink/[0.06] px-4 py-3 text-center text-sm font-medium text-ink transition-colors hover:border-lavender hover:bg-lavender-soft/60 hover:text-lavender"
             >
               Say hello
             </a>

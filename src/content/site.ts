@@ -48,14 +48,14 @@ export const profile = {
   location: "Long Beach, CA",
   email: "rusha406@gmail.com",
   linkedin: "https://www.linkedin.com/in/rusha-mistry-b3b422229/",
-  status: "M.S. Computer Science at CSULB · GPA 3.7",
+  status: "exploring software engineering & data roles",
 };
 
 export const hero = {
   greeting: "Hi, I'm Rusha",
   headline: ["I build the systems", "behind the data."],
   subline:
-    "Software engineer with 1+ year of production experience building Python backends, REST APIs, and AI-powered applications — with a focus on LLM systems, RAG, and reliable, well-tested software.",
+    "Software engineer building Python backends, REST APIs, and AI-powered applications with a focus on LLM systems, RAG, and reliable, well-tested software.",
 };
 
 export const about = {
@@ -85,7 +85,7 @@ export const experience: Experience[] = [
   {
     company: "PayGURU Technosoft Private Limited",
     role: "Python Engineer",
-    period: "Dec 2023 — Dec 2024",
+    period: "Dec 2023 to Dec 2024",
     location: "Vadodara, India",
     accent: "pink",
     summary:
@@ -101,7 +101,7 @@ export const experience: Experience[] = [
   {
     company: "SlashMark IT",
     role: "Data Science Intern",
-    period: "Sep 2023 — Jan 2024",
+    period: "Sep 2023 to Jan 2024",
     location: "Remote",
     accent: "blue",
     summary:
@@ -137,7 +137,7 @@ export const projects: Project[] = [
     description:
       "An LLM-powered retrieval-augmented generation (RAG) application that answers natural-language questions over a large knowledge base using semantic search and source-grounded generation.",
     highlights: [
-      "Engineered the retrieval pipeline — chunking, embeddings, and vector search over pgvector with reranking — to improve relevance and minimize hallucinations.",
+      "Engineered the retrieval pipeline, including chunking, embeddings, and vector search over pgvector with reranking, to improve relevance and minimize hallucinations.",
       "Added a RAGAS-style evaluation harness to catch quality regressions and flag low-confidence responses before output.",
       "Containerized the service with Docker.",
     ],
@@ -292,6 +292,5 @@ export const navLinks = [
   { label: "Work", href: "#work" },
   { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
-  { label: "Coffee", href: "#coffee" },
   { label: "Contact", href: "#contact" },
 ];

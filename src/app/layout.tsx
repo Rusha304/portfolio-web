@@ -23,9 +23,9 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://rushamistry.dev"),
-  title: "Rusha Bhavesh Mistry — Software Engineer",
+  title: "Rusha Bhavesh Mistry | Software Engineer",
   description:
-    "Software engineer with 1+ year of production experience building Python backends, REST APIs, and AI-powered applications. M.S. Computer Science at CSULB (GPA 3.7).",
+    "Software engineer building Python backends, REST APIs, and AI-powered applications. M.S. Computer Science at CSULB (GPA 3.7).",
   keywords: [
     "Rusha Mistry",
     "Software Engineer",
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Rusha Bhavesh Mistry" }],
   openGraph: {
-    title: "Rusha Bhavesh Mistry — Software Engineer",
+    title: "Rusha Bhavesh Mistry | Software Engineer",
     description:
       "Software engineer building Python backends, REST APIs, and AI-powered applications. Pursuing M.S. Computer Science at CSULB.",
     type: "website",

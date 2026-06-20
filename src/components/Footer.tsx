@@ -9,7 +9,7 @@ export default function Footer() {
           © {new Date().getFullYear()} {profile.name}
         </p>
         <p className="flex items-center gap-1.5 font-mono">
-          Built with Next.js & Tailwind — and a flat white
+          Built with Next.js & Tailwind, and a flat white
           <Coffee className="h-3.5 w-3.5" />
         </p>
         <a href="#top" className="transition-colors hover:text-ink">
