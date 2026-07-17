@@ -115,7 +115,7 @@ export const experience: Experience[] = [
   },
 ];
 
-export type ProjectIcon = "flame" | "sprout";
+export type ProjectIcon = "flame" | "sprout" | "activity" | "shield";
 
 export type Project = {
   title: string;
@@ -126,9 +126,50 @@ export type Project = {
   tag: string;
   accent: Accent;
   icon: ProjectIcon;
+  link?: string;
 };
 
 export const projects: Project[] = [
+  {
+    title: "Observability & Incident Debugging Platform",
+    tagline: "Traces, metrics, and RAG-assisted root cause",
+    accent: "butter",
+    icon: "activity",
+    description:
+      "An observability stack that instruments FastAPI microservices with OpenTelemetry and streams traces, logs, and metrics into ClickHouse, with a RAG assistant that suggests incident root causes.",
+    highlights: [
+      "Instrumented three FastAPI microservices with OpenTelemetry, streaming telemetry via Redpanda into ClickHouse and sustaining ~8K events/sec in k6 load tests.",
+      "Rewrote the payment service in Go with gRPC for internal calls, cutting p99 latency from ~210 ms to 45 ms.",
+      "Added a RAG incident assistant: a fine-tuned DistilBERT tags incidents, runbooks are retrieved from Qdrant, and the Claude API suggests root causes, rejecting answers without evidence citations.",
+    ],
+    stack: [
+      "Go",
+      "Python",
+      "PyTorch",
+      "OpenTelemetry",
+      "ClickHouse",
+      "Qdrant",
+      "Claude API",
+    ],
+    tag: "Observability · AI",
+    link: "https://github.com/Rusha304/ai-native-observability-incident-debugging-platform",
+  },
+  {
+    title: "Event Contract Quarantine & Replay Platform",
+    tagline: "Schema-validated Kafka events with safe replay",
+    accent: "lavender",
+    icon: "shield",
+    description:
+      "A Go service that validates Kafka events against versioned JSON Schema contracts, quarantines bad payloads with full lineage, and safely replays them once fixed.",
+    highlights: [
+      "Validated Kafka events against versioned JSON Schema contracts, quarantining bad payloads to PostgreSQL with full lineage for later replay.",
+      "Built an idempotent, Redis-deduplicated replay path with tests covering duplicate delivery and mid-replay schema changes.",
+      "Deployed on Kubernetes with Helm and AWS provisioned via Terraform; verified zero event loss with pod-kill chaos tests and GitHub Actions CI.",
+    ],
+    stack: ["Go", "Kafka", "Kubernetes", "Terraform", "AWS", "Redis", "PostgreSQL"],
+    tag: "Distributed · Infra",
+    link: "https://github.com/Rusha304/event-contract-quarantine-platform",
+  },
   {
     title: "LLM-Powered Knowledge Assistant",
     tagline: "RAG over a large knowledge base",

@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { projects, accentClasses } from "@/content/site";
-import { projectIcons } from "./icons";
+import { projectIcons, Github, Arrow } from "./icons";
 import Section from "./Section";
 import TiltCard from "./interactive/TiltCard";
 
@@ -67,6 +67,22 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
+
+                {project.link && (
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-cursor
+                    className={`group/link mt-5 inline-flex items-center gap-2 text-sm font-medium ${a.text}`}
+                  >
+                    <Github className="h-4 w-4" />
+                    <span className="underline decoration-line underline-offset-4 transition-colors group-hover/link:decoration-current">
+                      View on GitHub
+                    </span>
+                    <Arrow className="h-4 w-4 transition-transform group-hover/link:translate-x-0.5" />
+                  </a>
+                )}
               </motion.div>
             </TiltCard>
           );

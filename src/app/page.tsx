@@ -14,10 +14,12 @@ import { PointerProvider } from "@/components/interactive/PointerProvider";
 import InkTrail from "@/components/interactive/InkTrail";
 import GridParticles from "@/components/interactive/GridParticles";
 import ScrollColorShift from "@/components/interactive/ScrollColorShift";
+import OpenAtTop from "@/components/interactive/OpenAtTop";
 
 export default function Home() {
   return (
     <PointerProvider>
+      <OpenAtTop />
       <Background />
       <ScrollColorShift />
       <GridParticles />
